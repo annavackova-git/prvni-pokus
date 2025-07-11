@@ -1,46 +1,69 @@
-
-body {
-    font-family: Arial, sans-serif;
+/* Reset some default styles */
+* {
     margin: 0;
     padding: 0;
-}
-
-.container {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
     box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.5em;
-    }
-
-    p {
-        font-size: 1em;
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+    line-height: 1.6;
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
 }
 
-footer {
-    background-color: #003366;
-    color: white;
-    padding: 20px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+h1, h2, h3, h4 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #111;
 }
 
-footer a {
-    color: #aad4ff;
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #007acc;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-footer a:hover {
-    text-decoration: underline;
+a:hover {
+    color: #005f99;
 }
+
+header, footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #f0f0f0;
+    margin-bottom: 2rem;
+}
+
+nav {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 1rem;
+    font-weight: 500;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
+
