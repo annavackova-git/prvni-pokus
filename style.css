@@ -1,17 +1,61 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding: 2rem;
-    margin: 0;
-    background-color: #fdfdfd;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #222;
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+/* Flex layout to push footer to bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Centered container */
 .container {
-    max-width: 800px;
-    width: 100%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
 
+/* Header and footer styling */
+header {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
 
+footer {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Main content spacing */
+main {
+    flex: 1;
+}
+
+/* Link styling */
+a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
