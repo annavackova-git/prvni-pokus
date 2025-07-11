@@ -1,24 +1,30 @@
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom right, #e0f0ff, #ffffff);
-    color: #003366;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
 }
 
 .container {
-    padding: 100px 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.5em;
-}
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
 
-p {
-    font-size: 1.2em;
+    h1 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1em;
+    }
 }
 
 footer {
