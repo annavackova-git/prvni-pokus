@@ -1,17 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-    <meta charset="UTF-8">
-    <title>QR Platba – Anna Vacková</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>QR Platba – Anna Vacková</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #qr-container {
+      margin-top: 20px;
+    }
+    input[type="number"] {
+      padding: 8px;
+      font-size: 16px;
+      width: 100px;
+    }
+    button {
+      padding: 8px 12px;
+      font-size: 16px;
+      margin-left: 10px;
+    }
+    img {
+      margin-top: 20px;
+      max-width: 300px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Dobrý den,</h1>
-        <p>pro vytvoření QR platby uveďte částku, kterou chcete uhradit na můj účet.</p>
+  <div class="container">
+    <h1>Dobrý den,</h1>
+    <p>pro vytvoření QR platby uveďte částku, kterou chcete uhradit na můj účet.</p>
+
+    <h2>Podpořte mě dobrovolným příspěvkem</h2>
+    <label for="amount">Zadejte částku (Kč):</label>
+    <input type="number" id="amount" min="1" step="1" placeholder="např. 100">
+    <button onclick="generateQR()">Vygenerovat QR kód</button>
+
+    <div id="qr-container">
+      <img id="qr-image" src="" alt="QR kód se zobrazí zde">
     </div>
-    <footer>
-        <p>© 2025 Anna Vacková | https://github.com/annavackova-git</p>
-    </footer>
+  </div>
+
+  <footer>
+    <p>© 2025 Anna Vacková | https://github.com/annavackova-git</p>
+  </footer>
+
+  <script>
+    function generateQR() {
+      const amount = document.getElementById("amount").value;
+      const accountNumber = "1678872018";
+      const bankCode = "3030";
+      const vs = "20250714";
+      const message = "Dobrovolny prispevek";
+
+      if (!amount || amount <= 0) {
+        alert("Zadejte prosím platnou částku.");
+        return;
+      }
+
+      const url = `https://api.paylibo.com/paylibo/generator/czech/image?accountNumber=${accountNumber}&bankCode=${bankCode}&amount=${amount}&currency=CZK&vs=${vs}&message=${encodeURIComponent(message)}`;
+
+      const qrImage = document.getElementById("qr-image");
+      qrImage.src = url;
+      qrImage.alt = `QR kód pro platbu ${amount} Kč`;
+    }
+  </script>
 </body>
 </html>
